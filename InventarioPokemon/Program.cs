@@ -1,3 +1,5 @@
+using InventarioPokemon.Forms;
+
 namespace InventarioPokemon;
 internal static class Program
 {      

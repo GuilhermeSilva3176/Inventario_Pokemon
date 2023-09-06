@@ -7,22 +7,11 @@ namespace InventarioPokemon
 {
     public partial class FormMenuLogin : Form
     {
-        private ELPSqlConnection _connection;
-        private readonly ApiPokemonService _pokeApiService = new();
-
-
+        private readonly SqlConnectManager _gerenciadorDeConexao;
         public FormMenuLogin()
         {
             InitializeComponent();
-            string chaveConexao = ConfigurationManager.ConnectionStrings["MyDatabase"].ConnectionString;
-            try
-            {
-                ELPSqlConnection connection = new(chaveConexao);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"meu cu é teu: {ex.Message}");
-            }
+            _gerenciadorDeConexao = new SqlConnectManager();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -33,6 +22,11 @@ namespace InventarioPokemon
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTestarConexao_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

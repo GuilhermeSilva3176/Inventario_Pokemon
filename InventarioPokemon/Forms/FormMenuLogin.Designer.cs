@@ -34,11 +34,13 @@ partial class FormMenuLogin
         txtEmail = new TextBox();
         txtSenha = new TextBox();
         label2 = new Label();
+        btnTestarConexao = new Button();
+        label3 = new Label();
         SuspendLayout();
         // 
         // btnRegistrar
         // 
-        btnRegistrar.Location = new Point(12, 170);
+        btnRegistrar.Location = new Point(12, 195);
         btnRegistrar.Name = "btnRegistrar";
         btnRegistrar.Size = new Size(90, 30);
         btnRegistrar.TabIndex = 0;
@@ -47,7 +49,7 @@ partial class FormMenuLogin
         // 
         // btnLogin
         // 
-        btnLogin.Location = new Point(152, 170);
+        btnLogin.Location = new Point(12, 159);
         btnLogin.Name = "btnLogin";
         btnLogin.Size = new Size(90, 30);
         btnLogin.TabIndex = 1;
@@ -58,7 +60,7 @@ partial class FormMenuLogin
         // label1
         // 
         label1.AutoSize = true;
-        label1.Location = new Point(12, 18);
+        label1.Location = new Point(12, 28);
         label1.Name = "label1";
         label1.Size = new Size(36, 15);
         label1.TabIndex = 2;
@@ -67,32 +69,53 @@ partial class FormMenuLogin
         // 
         // txtEmail
         // 
-        txtEmail.Location = new Point(12, 36);
+        txtEmail.Location = new Point(12, 46);
         txtEmail.Name = "txtEmail";
-        txtEmail.Size = new Size(153, 23);
+        txtEmail.Size = new Size(163, 23);
         txtEmail.TabIndex = 3;
         // 
         // txtSenha
         // 
-        txtSenha.Location = new Point(12, 92);
+        txtSenha.Location = new Point(12, 102);
         txtSenha.Name = "txtSenha";
-        txtSenha.Size = new Size(153, 23);
+        txtSenha.Size = new Size(163, 23);
         txtSenha.TabIndex = 5;
         // 
         // label2
         // 
         label2.AutoSize = true;
-        label2.Location = new Point(12, 74);
+        label2.Location = new Point(12, 84);
         label2.Name = "label2";
         label2.Size = new Size(39, 15);
         label2.TabIndex = 4;
         label2.Text = "Senha";
         // 
+        // btnTestarConexao
+        // 
+        btnTestarConexao.Location = new Point(308, 229);
+        btnTestarConexao.Name = "btnTestarConexao";
+        btnTestarConexao.Size = new Size(78, 25);
+        btnTestarConexao.TabIndex = 6;
+        btnTestarConexao.Text = "Conexão";
+        btnTestarConexao.UseVisualStyleBackColor = true;
+        btnTestarConexao.Click += btnTestarConexao_Click;
+        // 
+        // label3
+        // 
+        label3.AutoSize = true;
+        label3.Location = new Point(217, 234);
+        label3.Name = "label3";
+        label3.Size = new Size(88, 15);
+        label3.TabIndex = 7;
+        label3.Text = "Testar conexão:";
+        // 
         // FormMenuLogin
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(270, 224);
+        ClientSize = new Size(398, 261);
+        Controls.Add(label3);
+        Controls.Add(btnTestarConexao);
         Controls.Add(txtSenha);
         Controls.Add(label2);
         Controls.Add(txtEmail);
@@ -113,4 +136,6 @@ partial class FormMenuLogin
     private TextBox txtEmail;
     private TextBox txtSenha;
     private Label label2;
+    private Button btnTestarConexao;
+    private Label label3;
 }

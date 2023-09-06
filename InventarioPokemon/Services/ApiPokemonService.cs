@@ -15,8 +15,6 @@ internal class ApiPokemonService
 
             if (!string.IsNullOrEmpty(randomPokemon.Name))
             {
-                //ELPSqlConnection conexaoFoda = new(connectionString);
-                //.inicia(randomPokemon.Name);
                 MessageBox.Show($"Pokemon '{randomPokemon.Name}' adicionado ao banco de dados.");
             }
         }catch (Exception ex)
