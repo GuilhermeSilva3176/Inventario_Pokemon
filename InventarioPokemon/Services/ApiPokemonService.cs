@@ -7,21 +7,7 @@ namespace InventarioPokemon.Services;
 internal class ApiPokemonService
 {
     private readonly HttpClient _httpClient = new();
-    public async Task AddRandomPokemonToDatabaseAsync()
-    {
-        try
-        {
-            PokeData randomPokemon = await PegarRandomPokemonAsync();
 
-            if (!string.IsNullOrEmpty(randomPokemon.Name))
-            {
-                MessageBox.Show($"Pokemon '{randomPokemon.Name}' adicionado ao banco de dados.");
-            }
-        }catch (Exception ex)
-        {
-            MessageBox.Show($"Erro ao adicionar Pokémon ao banco de dados: {ex.Message}");
-        }
-    }
     public async Task<PokeData> PegarRandomPokemonAsync()
     {
         int randomPokeId = new Random().Next(1, 1011);

@@ -1,25 +1,31 @@
 ﻿using System.Configuration;
 using System.Xml;
 using System.Xml.Linq;
+using InventarioPokemon.Sensible;
+using Newtonsoft.Json.Linq;
+using Npgsql;
 
 namespace InventarioPokemon.Services;
 
-internal class SqlConnectManager
+public class SqlConnectManager
 {
     public static string GetConnectionString()
     {
-        string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Sensible", "Key.xml");
-        string connectionString = string.Empty;
         try
         {
-            XmlDocument xmlDoc = new();
-            xmlDoc.Load(configPath);
-            connectionString = xmlDoc.SelectSingleNode("/configuration/connectionStrings/add[@name = 'MyDatabase']").Attributes["connectionString"].Value;
-        }
-        catch (Exception ex)
+            CaminhoJson caminhoJson = new();
+            string jsonFilePath = caminhoJson.retornaCaminho();
+
+            string jsonContent = File.ReadAllText(jsonFilePath);
+            dynamic config = JObject.Parse(jsonContent);
+
+            string configPath = $"Server={config.DatabaseSettings.Server};Database={config.DatabaseSettings.Database};Username={config.DatabaseSettings.Username};Password={config.DatabaseSettings.Password}";
+            return configPath;
+
+        }catch (Exception ex)
         {
-            MessageBox.Show($"Erro ao ler a string de conexão do arquivo XML: {ex.Message}");
+            MessageBox.Show($"Erro: {ex.Message}");
+            return null;
         }
-        return connectionString;
     }
 }

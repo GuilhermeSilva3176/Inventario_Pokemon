@@ -36,22 +36,23 @@ partial class FormMenuLogin
         label2 = new Label();
         btnTestarConexao = new Button();
         label3 = new Label();
+        lblConexao = new Label();
         SuspendLayout();
         // 
         // btnRegistrar
         // 
-        btnRegistrar.Location = new Point(12, 195);
+        btnRegistrar.Location = new Point(12, 155);
         btnRegistrar.Name = "btnRegistrar";
-        btnRegistrar.Size = new Size(90, 30);
+        btnRegistrar.Size = new Size(69, 30);
         btnRegistrar.TabIndex = 0;
         btnRegistrar.Text = "Registrar";
         btnRegistrar.UseVisualStyleBackColor = true;
         // 
         // btnLogin
         // 
-        btnLogin.Location = new Point(12, 159);
+        btnLogin.Location = new Point(106, 155);
         btnLogin.Name = "btnLogin";
-        btnLogin.Size = new Size(90, 30);
+        btnLogin.Size = new Size(69, 30);
         btnLogin.TabIndex = 1;
         btnLogin.Text = "Login";
         btnLogin.UseVisualStyleBackColor = true;
@@ -92,28 +93,39 @@ partial class FormMenuLogin
         // 
         // btnTestarConexao
         // 
-        btnTestarConexao.Location = new Point(308, 229);
+        btnTestarConexao.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+        btnTestarConexao.Location = new Point(356, 235);
         btnTestarConexao.Name = "btnTestarConexao";
-        btnTestarConexao.Size = new Size(78, 25);
+        btnTestarConexao.Size = new Size(39, 20);
         btnTestarConexao.TabIndex = 6;
-        btnTestarConexao.Text = "Conexão";
+        btnTestarConexao.Text = "Testar";
         btnTestarConexao.UseVisualStyleBackColor = true;
         btnTestarConexao.Click += btnTestarConexao_Click;
         // 
         // label3
         // 
         label3.AutoSize = true;
-        label3.Location = new Point(217, 234);
+        label3.Location = new Point(190, 237);
         label3.Name = "label3";
         label3.Size = new Size(88, 15);
         label3.TabIndex = 7;
         label3.Text = "Testar conexão:";
+        // 
+        // lblConexao
+        // 
+        lblConexao.AutoSize = true;
+        lblConexao.Location = new Point(274, 237);
+        lblConexao.Name = "lblConexao";
+        lblConexao.Size = new Size(29, 15);
+        lblConexao.TabIndex = 8;
+        lblConexao.Text = "N/A";
         // 
         // FormMenuLogin
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(398, 261);
+        Controls.Add(lblConexao);
         Controls.Add(label3);
         Controls.Add(btnTestarConexao);
         Controls.Add(txtSenha);
@@ -138,4 +150,5 @@ partial class FormMenuLogin
     private Label label2;
     private Button btnTestarConexao;
     private Label label3;
+    private Label lblConexao;
 }

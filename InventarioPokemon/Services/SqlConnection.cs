@@ -3,30 +3,32 @@ using System.Xml;
 
 namespace InventarioPokemon.Services;
 
-internal class SQLConnection
+public class SqlConnection
 {
-    public void Conectar()
-    {
-        string linhaDeConexao = SqlConnectManager.GetConnectionString();
 
+    private static string linhaDeConexao = SqlConnectManager.GetConnectionString();
+    public static NpgsqlConnection Conecta()
+    {
         if (!string.IsNullOrEmpty(linhaDeConexao))
         {
-            using(var connection = new NpgsqlConnection(linhaDeConexao))
+            using (var connection = new NpgsqlConnection(linhaDeConexao))
             {
-                try
+               try
                 {
                     connection.Open();
-                    MessageBox.Show("Conexão bem-sucedida com o banco de dados.");
+                    return connection;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}");
+                catch (Exception ex) 
+                { 
+                    MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}"); 
+                    throw; 
                 }
             }
         }
-        else
-        {
+        else 
+        { 
             MessageBox.Show("String de conexão não encontrada ou inválida.");
+            return null;
         }
     }
 }
