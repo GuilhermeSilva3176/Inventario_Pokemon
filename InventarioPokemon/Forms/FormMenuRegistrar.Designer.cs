@@ -119,6 +119,7 @@
             Controls.Add(btnRegistrar);
             Name = "FormMenuRegistrar";
             Text = "Menu - Registrar";
+            Load += FormMenuRegistrar_Load;
             ResumeLayout(false);
             PerformLayout();
         }

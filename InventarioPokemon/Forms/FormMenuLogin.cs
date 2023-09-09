@@ -1,10 +1,7 @@
 using InventarioPokemon.Forms;
-using InventarioPokemon.Models;
-using InventarioPokemon.Models.UsuarioLoginERegistrar;
 using InventarioPokemon.Services.ServicoDeAutenticacao;
 using InventarioPokemon.Services.BdConexao;
 using Npgsql;
-using System.Configuration;
 
 namespace InventarioPokemon
 {
@@ -49,8 +46,12 @@ namespace InventarioPokemon
         {
             FormMenuRegistrar menuRegistrar = new FormMenuRegistrar();
             this.Hide();
-            menuRegistrar.ShowDialog();
-            this.Show();
+            menuRegistrar.Show();
+        }
+
+        private void FormMenuLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

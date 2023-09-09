@@ -95,7 +95,7 @@ partial class FormMenuLogin
         // btnTestarConexao
         // 
         btnTestarConexao.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
-        btnTestarConexao.Location = new Point(244, 229);
+        btnTestarConexao.Location = new Point(293, 229);
         btnTestarConexao.Name = "btnTestarConexao";
         btnTestarConexao.Size = new Size(39, 20);
         btnTestarConexao.TabIndex = 6;
@@ -106,7 +106,7 @@ partial class FormMenuLogin
         // label3
         // 
         label3.AutoSize = true;
-        label3.Location = new Point(78, 231);
+        label3.Location = new Point(127, 231);
         label3.Name = "label3";
         label3.Size = new Size(88, 15);
         label3.TabIndex = 7;
@@ -115,7 +115,7 @@ partial class FormMenuLogin
         // lblConexao
         // 
         lblConexao.AutoSize = true;
-        lblConexao.Location = new Point(162, 231);
+        lblConexao.Location = new Point(211, 231);
         lblConexao.Name = "lblConexao";
         lblConexao.Size = new Size(29, 15);
         lblConexao.TabIndex = 8;
@@ -133,7 +133,7 @@ partial class FormMenuLogin
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(310, 261);
+        ClientSize = new Size(344, 261);
         Controls.Add(lblLogar);
         Controls.Add(lblConexao);
         Controls.Add(label3);
@@ -146,6 +146,7 @@ partial class FormMenuLogin
         Controls.Add(btnRegistrar);
         Name = "FormMenuLogin";
         Text = "Menu - Login";
+        Load += FormMenuLogin_Load;
         ResumeLayout(false);
         PerformLayout();
     }

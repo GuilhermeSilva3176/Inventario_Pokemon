@@ -50,9 +50,8 @@ internal class AutenticacaoService
 
     private void ExibirTelaUsuario(Form form)
     {
-        FormTelaUsuario telaUsuario = new FormTelaUsuario();
+        FormTelaUsuario telaUsuario = new FormTelaUsuario();      
         form.Hide();
         telaUsuario.ShowDialog();
-        form.Show();
     }
 }

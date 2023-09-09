@@ -27,9 +27,9 @@ internal class RegistrarConta
                     cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@senha", senha);
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                    return rowsAffected > 0;
+                    return true;
                 }
             }
             catch (Exception ex)

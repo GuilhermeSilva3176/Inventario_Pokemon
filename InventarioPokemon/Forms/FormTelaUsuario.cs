@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using InventarioPokemon.Forms;
 
 namespace InventarioPokemon
 {
@@ -15,6 +7,19 @@ namespace InventarioPokemon
         public FormTelaUsuario()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormConfiguracoesConta configuracoesConta = new();
+
+            this.Hide();
+            configuracoesConta.Show();
+        }
+
+        private void FormTelaUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
