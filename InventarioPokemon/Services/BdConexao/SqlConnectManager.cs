@@ -1,11 +1,7 @@
-﻿using System.Configuration;
-using System.Xml;
-using System.Xml.Linq;
-using InventarioPokemon.Sensible;
+﻿using InventarioPokemon.Sensible;
 using Newtonsoft.Json.Linq;
-using Npgsql;
 
-namespace InventarioPokemon.Services;
+namespace InventarioPokemon.Services.BdConexao;
 
 public class SqlConnectManager
 {
@@ -21,8 +17,8 @@ public class SqlConnectManager
 
             string configPath = $"Server={config.DatabaseSettings.Server};Database={config.DatabaseSettings.Database};Username={config.DatabaseSettings.Username};Password={config.DatabaseSettings.Password}";
             return configPath;
-
-        }catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             MessageBox.Show($"Erro: {ex.Message}");
             return null;

@@ -1,11 +1,9 @@
 ﻿using Npgsql;
-using System.Xml;
 
-namespace InventarioPokemon.Services;
+namespace InventarioPokemon.Services.BdConexao;
 
 public class SqlConnection
 {
-
     private static string linhaDeConexao = SqlConnectManager.GetConnectionString();
     public static NpgsqlConnection Conecta()
     {
@@ -13,20 +11,20 @@ public class SqlConnection
         {
             using (var connection = new NpgsqlConnection(linhaDeConexao))
             {
-               try
+                try
                 {
                     connection.Open();
                     return connection;
                 }
-                catch (Exception ex) 
-                { 
-                    MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}"); 
-                    throw; 
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}");
+                    throw;
                 }
             }
         }
-        else 
-        { 
+        else
+        {
             MessageBox.Show("String de conexão não encontrada ou inválida.");
             return null;
         }

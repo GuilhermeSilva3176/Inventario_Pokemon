@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtSenha = new TextBox();
+            txtNomeRegistrar = new TextBox();
             label2 = new Label();
-            txtEmail = new TextBox();
+            txtEmailRegistrar = new TextBox();
             label1 = new Label();
             btnRegistrar = new Button();
-            textBox1 = new TextBox();
             label3 = new Label();
+            txtSenhaRegistrar = new TextBox();
+            lblRegistro = new Label();
             SuspendLayout();
             // 
-            // txtSenha
+            // txtNomeRegistrar
             // 
-            txtSenha.Location = new Point(12, 27);
-            txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(153, 23);
-            txtSenha.TabIndex = 10;
+            txtNomeRegistrar.Location = new Point(12, 27);
+            txtNomeRegistrar.Name = "txtNomeRegistrar";
+            txtNomeRegistrar.Size = new Size(153, 23);
+            txtNomeRegistrar.TabIndex = 10;
             // 
             // label2
             // 
@@ -53,12 +54,12 @@
             label2.TabIndex = 9;
             label2.Text = "Nome";
             // 
-            // txtEmail
+            // txtEmailRegistrar
             // 
-            txtEmail.Location = new Point(12, 85);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(153, 23);
-            txtEmail.TabIndex = 8;
+            txtEmailRegistrar.Location = new Point(12, 85);
+            txtEmailRegistrar.Name = "txtEmailRegistrar";
+            txtEmailRegistrar.Size = new Size(153, 23);
+            txtEmailRegistrar.TabIndex = 8;
             // 
             // label1
             // 
@@ -75,15 +76,9 @@
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(90, 30);
             btnRegistrar.TabIndex = 6;
-            btnRegistrar.Text = "Registrar";
+            btnRegistrar.Text = "Criar Conta";
             btnRegistrar.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(12, 144);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(153, 23);
-            textBox1.TabIndex = 12;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // label3
             // 
@@ -94,32 +89,49 @@
             label3.TabIndex = 11;
             label3.Text = "Senha";
             // 
+            // txtSenhaRegistrar
+            // 
+            txtSenhaRegistrar.Location = new Point(12, 144);
+            txtSenhaRegistrar.Name = "txtSenhaRegistrar";
+            txtSenhaRegistrar.Size = new Size(153, 23);
+            txtSenhaRegistrar.TabIndex = 12;
+            // 
+            // lblRegistro
+            // 
+            lblRegistro.AutoSize = true;
+            lblRegistro.Location = new Point(110, 196);
+            lblRegistro.Name = "lblRegistro";
+            lblRegistro.Size = new Size(0, 15);
+            lblRegistro.TabIndex = 13;
+            // 
             // FormMenuRegistrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(203, 239);
-            Controls.Add(textBox1);
+            ClientSize = new Size(274, 239);
+            Controls.Add(lblRegistro);
+            Controls.Add(txtSenhaRegistrar);
             Controls.Add(label3);
-            Controls.Add(txtSenha);
+            Controls.Add(txtNomeRegistrar);
             Controls.Add(label2);
-            Controls.Add(txtEmail);
+            Controls.Add(txtEmailRegistrar);
             Controls.Add(label1);
             Controls.Add(btnRegistrar);
             Name = "FormMenuRegistrar";
-            Text = "FormMenuRegistrar";
+            Text = "Menu - Registrar";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox txtSenha;
+        private TextBox txtNomeRegistrar;
         private Label label2;
-        private TextBox txtEmail;
+        private TextBox txtEmailRegistrar;
         private Label label1;
         private Button btnRegistrar;
-        private TextBox textBox1;
         private Label label3;
+        private TextBox txtSenhaRegistrar;
+        private Label lblRegistro;
     }
 }

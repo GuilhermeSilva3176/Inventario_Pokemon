@@ -1,8 +1,7 @@
 ﻿using InventarioPokemon.Models;
 using Newtonsoft.Json;
 
-
-namespace InventarioPokemon.Services;
+namespace InventarioPokemon.Services.ApiConexao;
 
 internal class ApiPokemonService
 {
@@ -15,8 +14,8 @@ internal class ApiPokemonService
         string apiUrl = $"https://pokeapi.co/api/v2/pokemon/{randomPokeId}";
 
         HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
-        
-        if(response.IsSuccessStatusCode)
+
+        if (response.IsSuccessStatusCode)
         {
             string responseBody = await response.Content.ReadAsStringAsync();
             PokeData pokemon = JsonConvert.DeserializeObject<PokeData>(responseBody)!;

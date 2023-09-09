@@ -31,12 +31,13 @@ partial class FormMenuLogin
         btnRegistrar = new Button();
         btnLogin = new Button();
         label1 = new Label();
-        txtEmail = new TextBox();
-        txtSenha = new TextBox();
+        txtEmailLogin = new TextBox();
+        txtSenhaLogin = new TextBox();
         label2 = new Label();
         btnTestarConexao = new Button();
         label3 = new Label();
         lblConexao = new Label();
+        lblLogar = new Label();
         SuspendLayout();
         // 
         // btnRegistrar
@@ -47,6 +48,7 @@ partial class FormMenuLogin
         btnRegistrar.TabIndex = 0;
         btnRegistrar.Text = "Registrar";
         btnRegistrar.UseVisualStyleBackColor = true;
+        btnRegistrar.Click += btnRegistrar_Click;
         // 
         // btnLogin
         // 
@@ -56,7 +58,7 @@ partial class FormMenuLogin
         btnLogin.TabIndex = 1;
         btnLogin.Text = "Login";
         btnLogin.UseVisualStyleBackColor = true;
-        btnLogin.Click += button2_Click;
+        btnLogin.Click += btnLogin_Click;
         // 
         // label1
         // 
@@ -66,21 +68,20 @@ partial class FormMenuLogin
         label1.Size = new Size(36, 15);
         label1.TabIndex = 2;
         label1.Text = "Email";
-        label1.Click += label1_Click;
         // 
-        // txtEmail
+        // txtEmailLogin
         // 
-        txtEmail.Location = new Point(12, 46);
-        txtEmail.Name = "txtEmail";
-        txtEmail.Size = new Size(163, 23);
-        txtEmail.TabIndex = 3;
+        txtEmailLogin.Location = new Point(12, 46);
+        txtEmailLogin.Name = "txtEmailLogin";
+        txtEmailLogin.Size = new Size(163, 23);
+        txtEmailLogin.TabIndex = 3;
         // 
-        // txtSenha
+        // txtSenhaLogin
         // 
-        txtSenha.Location = new Point(12, 102);
-        txtSenha.Name = "txtSenha";
-        txtSenha.Size = new Size(163, 23);
-        txtSenha.TabIndex = 5;
+        txtSenhaLogin.Location = new Point(12, 102);
+        txtSenhaLogin.Name = "txtSenhaLogin";
+        txtSenhaLogin.Size = new Size(163, 23);
+        txtSenhaLogin.TabIndex = 5;
         // 
         // label2
         // 
@@ -94,7 +95,7 @@ partial class FormMenuLogin
         // btnTestarConexao
         // 
         btnTestarConexao.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
-        btnTestarConexao.Location = new Point(356, 235);
+        btnTestarConexao.Location = new Point(244, 229);
         btnTestarConexao.Name = "btnTestarConexao";
         btnTestarConexao.Size = new Size(39, 20);
         btnTestarConexao.TabIndex = 6;
@@ -105,7 +106,7 @@ partial class FormMenuLogin
         // label3
         // 
         label3.AutoSize = true;
-        label3.Location = new Point(190, 237);
+        label3.Location = new Point(78, 231);
         label3.Name = "label3";
         label3.Size = new Size(88, 15);
         label3.TabIndex = 7;
@@ -114,23 +115,32 @@ partial class FormMenuLogin
         // lblConexao
         // 
         lblConexao.AutoSize = true;
-        lblConexao.Location = new Point(274, 237);
+        lblConexao.Location = new Point(162, 231);
         lblConexao.Name = "lblConexao";
         lblConexao.Size = new Size(29, 15);
         lblConexao.TabIndex = 8;
         lblConexao.Text = "N/A";
         // 
+        // lblLogar
+        // 
+        lblLogar.AutoSize = true;
+        lblLogar.Location = new Point(190, 163);
+        lblLogar.Name = "lblLogar";
+        lblLogar.Size = new Size(0, 15);
+        lblLogar.TabIndex = 9;
+        // 
         // FormMenuLogin
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(398, 261);
+        ClientSize = new Size(310, 261);
+        Controls.Add(lblLogar);
         Controls.Add(lblConexao);
         Controls.Add(label3);
         Controls.Add(btnTestarConexao);
-        Controls.Add(txtSenha);
+        Controls.Add(txtSenhaLogin);
         Controls.Add(label2);
-        Controls.Add(txtEmail);
+        Controls.Add(txtEmailLogin);
         Controls.Add(label1);
         Controls.Add(btnLogin);
         Controls.Add(btnRegistrar);
@@ -145,10 +155,11 @@ partial class FormMenuLogin
     private Button btnRegistrar;
     private Button btnLogin;
     private Label label1;
-    private TextBox txtEmail;
-    private TextBox txtSenha;
+    private TextBox txtEmailLogin;
+    private TextBox txtSenhaLogin;
     private Label label2;
     private Button btnTestarConexao;
     private Label label3;
     private Label lblConexao;
+    private Label lblLogar;
 }
