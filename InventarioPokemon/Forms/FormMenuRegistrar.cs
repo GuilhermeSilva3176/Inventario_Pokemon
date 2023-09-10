@@ -19,7 +19,7 @@ public partial class FormMenuRegistrar : Form
         string email = txtEmailRegistrar.Text;
         string senha = txtSenhaRegistrar.Text;
 
-        if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(senha))
+        if (string.IsNullOrEmpty(nome) && string.IsNullOrEmpty(email) && string.IsNullOrEmpty(senha))
         {
             try
             {
@@ -27,7 +27,7 @@ public partial class FormMenuRegistrar : Form
 
                 int regisSucesso = regisConta.RegistrarUsuario(nome, email, senha);
 
-                if (regisSucesso == 0)
+                if (regisSucesso != 0)
                 {
                     MessageBox.Show("Registro realizado com sucesso!");
                 }

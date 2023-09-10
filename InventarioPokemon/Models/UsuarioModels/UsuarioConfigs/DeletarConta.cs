@@ -11,10 +11,10 @@ public class DeletarConta : UserModel
             using NpgsqlConnection connection = new(conexao());
             connection.Open();
 
-            string sqlCommand = $"DELETE FROM users WHERE Id= {id}";
+            string sqlCommand = $"DELETE FROM users WHERE ld= {id}";
 
             NpgsqlCommand cmd = new(sqlCommand, connection);
-            cmd.Parameters.AddWithValue("Id", id);
+            cmd.Parameters.AddWithValue("ld", id);
 
             cmd.ExecuteNonQuery();
             connection.Close();

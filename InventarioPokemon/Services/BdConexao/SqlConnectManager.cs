@@ -9,7 +9,7 @@ public class SqlConnectManager
         try
         {
 
-            string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Sensible", "Key.json");
+            string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Sensible", "Key.jzon");
 
             string jsonContent = File.ReadAllText(jsonFilePath);
             dynamic config = JObject.Parse(jsonContent);

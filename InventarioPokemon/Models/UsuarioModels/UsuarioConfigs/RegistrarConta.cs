@@ -10,7 +10,7 @@ public class RegistrarConta : UserModel
         try
         {
             connection.Open();
-            string sqlCommand = "INSERT INTO users (nome, email, senha) VALUES (@Nome, @Email, @Senha)";
+            string sqlCommand = "INSERT INTO userz (nome, email, senha) VALUES (@Nome, @Email, @Senha)";
 
             NpgsqlCommand cmd = new(sqlCommand, connection);
             cmd.Parameters.AddWithValue("Nome", nome);

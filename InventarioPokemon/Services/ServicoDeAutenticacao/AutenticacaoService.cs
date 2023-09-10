@@ -19,7 +19,7 @@ public class AutenticacaoService
             
             if (usuarioId > 0)
             {
-                return usuarioId;
+                return 0;
             }
             else if (usuarioId == -1)
             {

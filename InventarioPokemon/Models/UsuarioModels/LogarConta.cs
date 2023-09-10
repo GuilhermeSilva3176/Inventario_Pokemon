@@ -10,7 +10,7 @@ public class LogarConta : UserModel
         {
             using NpgsqlConnection connection = new(conexao());
             connection.Open();
-            int id = -1;
+            int id;
             string userQuery = "SELECT id FROM Users WHERE email = @Email AND senha = @Senha";
 
             NpgsqlCommand cmdNpg = new(userQuery, connection);
