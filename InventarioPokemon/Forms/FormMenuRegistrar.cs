@@ -1,4 +1,4 @@
-﻿using InventarioPokemon.Models.UsuarioLoginERegistrar;
+﻿using InventarioPokemon.Models.UsuarioModels.UsuarioConfigs;
 using InventarioPokemon.Services.BdConexao;
 
 namespace InventarioPokemon.Forms;
@@ -23,11 +23,11 @@ public partial class FormMenuRegistrar : Form
         {
             try
             {
-                RegistrarConta regisConta = new(linhaDeConexão);
+                RegistrarConta regisConta = new();
 
-                bool regisSucesso = regisConta.RegistrarUsuario(nome, email, senha);
+                int regisSucesso = regisConta.RegistrarUsuario(nome, email, senha);
 
-                if (regisSucesso)
+                if (regisSucesso == 0)
                 {
                     MessageBox.Show("Registro realizado com sucesso!");
                 }

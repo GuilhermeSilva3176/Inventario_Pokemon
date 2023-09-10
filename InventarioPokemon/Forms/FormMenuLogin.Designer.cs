@@ -34,9 +34,6 @@ partial class FormMenuLogin
         txtEmailLogin = new TextBox();
         txtSenhaLogin = new TextBox();
         label2 = new Label();
-        btnTestarConexao = new Button();
-        label3 = new Label();
-        lblConexao = new Label();
         lblLogar = new Label();
         SuspendLayout();
         // 
@@ -92,39 +89,10 @@ partial class FormMenuLogin
         label2.TabIndex = 4;
         label2.Text = "Senha";
         // 
-        // btnTestarConexao
-        // 
-        btnTestarConexao.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
-        btnTestarConexao.Location = new Point(293, 229);
-        btnTestarConexao.Name = "btnTestarConexao";
-        btnTestarConexao.Size = new Size(39, 20);
-        btnTestarConexao.TabIndex = 6;
-        btnTestarConexao.Text = "Testar";
-        btnTestarConexao.UseVisualStyleBackColor = true;
-        btnTestarConexao.Click += btnTestarConexao_Click;
-        // 
-        // label3
-        // 
-        label3.AutoSize = true;
-        label3.Location = new Point(127, 231);
-        label3.Name = "label3";
-        label3.Size = new Size(88, 15);
-        label3.TabIndex = 7;
-        label3.Text = "Testar conexão:";
-        // 
-        // lblConexao
-        // 
-        lblConexao.AutoSize = true;
-        lblConexao.Location = new Point(211, 231);
-        lblConexao.Name = "lblConexao";
-        lblConexao.Size = new Size(29, 15);
-        lblConexao.TabIndex = 8;
-        lblConexao.Text = "N/A";
-        // 
         // lblLogar
         // 
         lblLogar.AutoSize = true;
-        lblLogar.Location = new Point(190, 163);
+        lblLogar.Location = new Point(12, 191);
         lblLogar.Name = "lblLogar";
         lblLogar.Size = new Size(0, 15);
         lblLogar.TabIndex = 9;
@@ -133,11 +101,8 @@ partial class FormMenuLogin
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(344, 261);
+        ClientSize = new Size(193, 215);
         Controls.Add(lblLogar);
-        Controls.Add(lblConexao);
-        Controls.Add(label3);
-        Controls.Add(btnTestarConexao);
         Controls.Add(txtSenhaLogin);
         Controls.Add(label2);
         Controls.Add(txtEmailLogin);
@@ -159,8 +124,5 @@ partial class FormMenuLogin
     private TextBox txtEmailLogin;
     private TextBox txtSenhaLogin;
     private Label label2;
-    private Button btnTestarConexao;
-    private Label label3;
-    private Label lblConexao;
     private Label lblLogar;
 }

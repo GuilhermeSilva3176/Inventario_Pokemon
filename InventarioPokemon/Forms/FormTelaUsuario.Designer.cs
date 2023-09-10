@@ -30,7 +30,7 @@
         {
             label1 = new Label();
             lblIdUsuario = new Label();
-            button1 = new Button();
+            btnTeste = new Button();
             SuspendLayout();
             // 
             // label1
@@ -52,27 +52,26 @@
             lblIdUsuario.TabIndex = 1;
             lblIdUsuario.Text = "N/A";
             // 
-            // button1
+            // btnTeste
             // 
-            button1.Location = new Point(726, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(62, 27);
-            button1.TabIndex = 2;
-            button1.Text = "Settings";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnTeste.Location = new Point(12, 400);
+            btnTeste.Name = "btnTeste";
+            btnTeste.Size = new Size(75, 23);
+            btnTeste.TabIndex = 3;
+            btnTeste.Text = "Teste";
+            btnTeste.UseVisualStyleBackColor = true;
+            btnTeste.Click += btnTeste_Click;
             // 
             // FormTelaUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(btnTeste);
             Controls.Add(lblIdUsuario);
             Controls.Add(label1);
             Name = "FormTelaUsuario";
             Text = "FormTelaUsuario";
-            Load += FormTelaUsuario_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -81,6 +80,6 @@
 
         private Label label1;
         private Label lblIdUsuario;
-        private Button button1;
+        private Button btnTeste;
     }
 }

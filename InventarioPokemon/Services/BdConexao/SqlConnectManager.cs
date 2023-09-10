@@ -1,5 +1,4 @@
-﻿using InventarioPokemon.Sensible;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 
 namespace InventarioPokemon.Services.BdConexao;
 
@@ -9,8 +8,8 @@ public class SqlConnectManager
     {
         try
         {
-            CaminhoJson caminhoJson = new();
-            string jsonFilePath = caminhoJson.retornaCaminho();
+
+            string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Sensible", "Key.json");
 
             string jsonContent = File.ReadAllText(jsonFilePath);
             dynamic config = JObject.Parse(jsonContent);
@@ -20,7 +19,7 @@ public class SqlConnectManager
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Erro: {ex.Message}");
+            MessageBox.Show($"Erro ao encontrar o caminho do arquivo: {ex.Message}");
             return null;
         }
     }

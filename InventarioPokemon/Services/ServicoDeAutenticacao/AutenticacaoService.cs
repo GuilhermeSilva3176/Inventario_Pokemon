@@ -1,13 +1,9 @@
-﻿using InventarioPokemon.Models.UsuarioLoginERegistrar;
+﻿using InventarioPokemon.Models.UsuarioModels;
 
 namespace InventarioPokemon.Services.ServicoDeAutenticacao;
 
-internal class AutenticacaoService
+public class AutenticacaoService
 {
-    private readonly string _conexaoString;
-
-    public AutenticacaoService(string conexaoString) => _conexaoString = conexaoString;  
-
     public void AutenticarUsuario(string email, string senha, Form form)
     {
         if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
@@ -18,12 +14,11 @@ internal class AutenticacaoService
 
         try
         {
-            LogarConta logarConta = new LogarConta(_conexaoString);
+            LogarConta logarConta = new();
             int usuarioId = logarConta.LogarUsuario(email, senha);
             
             if (usuarioId > 0)
             {
-                MessageBox.Show("Autenticação bem-sucedida!");
                 ExibirTelaUsuario(form);
             }
             else if (usuarioId == -1)
