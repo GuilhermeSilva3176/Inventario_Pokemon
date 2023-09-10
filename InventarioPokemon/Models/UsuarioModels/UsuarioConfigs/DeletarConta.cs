@@ -2,15 +2,13 @@
 
 namespace InventarioPokemon.Models.UsuarioModels.UsuarioConfigs;
 
-internal class DeletarConta : UserModel
+public class DeletarConta : UserModel
 {
-    public int ExcluirUsuarioPorID(string email, string senha)
+    public int ExcluirUsuarioPorID(int id)
     {
-        IDUsuario iDUsuario = new();
-        int id = iDUsuario.usarID(email, senha);
         try
         {
-            using NpgsqlConnection connection = new(db);
+            using NpgsqlConnection connection = new(conexao());
             connection.Open();
 
             string sqlCommand = $"DELETE FROM users WHERE Id= {id}";

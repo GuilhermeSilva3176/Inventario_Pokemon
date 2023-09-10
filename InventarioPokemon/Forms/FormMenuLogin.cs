@@ -16,15 +16,27 @@ namespace InventarioPokemon
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            IDUsuario infoUsuario = new();
 
             string email = txtEmailLogin.Text;
             string senha = txtSenhaLogin.Text;
-            infoUsuario.usarID(email, senha);
-            AutenticacaoService aut = new();
-            aut.AutenticarUsuario(email, senha, this);
-            FormTelaUsuario telaUsuario = new();
-            telaUsuario.UsuarioID = infoUsuario.usarID(email,senha);
+
+            try
+            {
+                
+                AutenticacaoService aut = new();
+                int usuarioID = aut.AutenticarUsuario(email, senha, this);
+                if (usuarioID > 0)
+                {
+                    FormTelaUsuario telaUsuario = new();
+                    telaUsuario.UsuarioID = usuarioID;
+                    this.Hide();
+                    telaUsuario.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro inesperado: {ex}");
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 
 namespace InventarioPokemon.Models.UsuarioModels;
 
-internal class LogarConta : UserModel
+public class LogarConta : UserModel
 {
     public int LogarUsuario(string email, string senha)
     {
@@ -10,7 +10,7 @@ internal class LogarConta : UserModel
         {
             using NpgsqlConnection connection = new(conexao());
             connection.Open();
-            int id;
+            int id = -1;
             string userQuery = "SELECT id FROM Users WHERE email = @Email AND senha = @Senha";
 
             NpgsqlCommand cmdNpg = new(userQuery, connection);
@@ -23,13 +23,12 @@ internal class LogarConta : UserModel
             if (reader.Read())
             {
                 id = reader.GetInt32(0);
-                return id;
             }
+            return id;
         }
         catch (Exception ex)
         {
             throw ex;
         }
-        return -1;
     }
 }

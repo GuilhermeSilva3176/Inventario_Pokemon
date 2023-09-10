@@ -4,12 +4,12 @@ namespace InventarioPokemon.Services.ServicoDeAutenticacao;
 
 public class AutenticacaoService
 {
-    public void AutenticarUsuario(string email, string senha, Form form)
+    public int AutenticarUsuario(string email, string senha, Form form)
     {
         if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
         {
             ExibirErro(form, "Preencha os campos", Color.Red);
-            return;
+            return -1;
         }
 
         try
@@ -19,20 +19,23 @@ public class AutenticacaoService
             
             if (usuarioId > 0)
             {
-                ExibirTelaUsuario(form);
+                return usuarioId;
             }
             else if (usuarioId == -1)
             {
                 ExibirErro(form, "Email ou Senha incorretos", Color.Red);
+                return -1;
             }
             else
             {
                 ExibirErro(form, "Erro durante a autenticação.", Color.Red);
+                return -1;
             }
         }
         catch (Exception ex)
         {
             MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}");
+            return -1;
         }
     }
 
@@ -41,12 +44,5 @@ public class AutenticacaoService
         Label lblLogar = form.Controls.Find("lblLogar", true).FirstOrDefault() as Label;
         lblLogar.Text = mensagem;
         lblLogar.ForeColor = cor;
-    }
-
-    private void ExibirTelaUsuario(Form form)
-    {
-        FormTelaUsuario telaUsuario = new FormTelaUsuario();      
-        form.Hide();
-        telaUsuario.ShowDialog();
     }
 }
