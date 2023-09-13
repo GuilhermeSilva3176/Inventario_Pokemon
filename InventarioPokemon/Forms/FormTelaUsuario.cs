@@ -8,6 +8,9 @@ namespace InventarioPokemon
     public partial class FormTelaUsuario : Form
     {
         public int UsuarioID { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
+
         public FormTelaUsuario()
         {
             InitializeComponent();
@@ -32,7 +35,8 @@ namespace InventarioPokemon
                 {
                     MessageBox.Show("Erro ao excluir a conta");
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}");
             }

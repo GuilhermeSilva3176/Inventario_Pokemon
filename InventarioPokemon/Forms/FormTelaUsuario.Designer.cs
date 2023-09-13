@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            lblIdUsuario = new Label();
+            lblUsuario = new Label();
             btnDelete = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -43,35 +44,46 @@
             label1.TabIndex = 0;
             label1.Text = "Usuário:";
             // 
-            // lblIdUsuario
+            // lblUsuario
             // 
-            lblIdUsuario.AutoSize = true;
-            lblIdUsuario.Location = new Point(115, 19);
-            lblIdUsuario.Name = "lblIdUsuario";
-            lblIdUsuario.Size = new Size(29, 15);
-            lblIdUsuario.TabIndex = 1;
-            lblIdUsuario.Text = "N/A";
+            lblUsuario.AutoSize = true;
+            lblUsuario.Location = new Point(115, 19);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(29, 15);
+            lblUsuario.TabIndex = 1;
+            lblUsuario.Text = "N/A";
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(31, 394);
+            btnDelete.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.Location = new Point(390, 178);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
+            btnDelete.Size = new Size(49, 22);
             btnDelete.TabIndex = 2;
-            btnDelete.Text = "DELETE";
+            btnDelete.Text = "delete";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(200, 182);
+            label2.Name = "label2";
+            label2.Size = new Size(189, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Clique aqui para deletar sua conta:";
             // 
             // FormTelaUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(451, 206);
+            Controls.Add(label2);
             Controls.Add(btnDelete);
-            Controls.Add(lblIdUsuario);
+            Controls.Add(lblUsuario);
             Controls.Add(label1);
             Name = "FormTelaUsuario";
-            Text = "FormTelaUsuario";
+            Text = "Tela Usuario - Configuração";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -79,7 +91,8 @@
         #endregion
 
         private Label label1;
-        private Label lblIdUsuario;
+        private Label lblUsuario;
         private Button btnDelete;
+        private Label label2;
     }
 }

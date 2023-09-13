@@ -4,11 +4,29 @@ namespace InventarioPokemon.Models.UsuarioModels;
 
 public class UserModel
 {
-    public string db;
-    public string conexao()
+    private string db;
+    private static UserModel instance;
+
+    private UserModel()
     {
         db = SqlConnectManager.GetConnectionString();
-        return db;
     }
 
+    public static UserModel Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new UserModel();
+            }
+            return instance;
+        }
+    }
+
+    public string GetConnectionString()
+    {
+        return db;
+    }
 }
+

@@ -1,14 +1,10 @@
 using InventarioPokemon.Forms;
 using InventarioPokemon.Services.ServicoDeAutenticacao;
-using InventarioPokemon.Models.UsuarioModels.UsuarioConfigs;
-using InventarioPokemon.Models.UsuarioModels;
 
 namespace InventarioPokemon
 {
     public partial class FormMenuLogin : Form
     {
-
-        private UserModel user;
         public FormMenuLogin()
         {
             InitializeComponent();
@@ -19,18 +15,23 @@ namespace InventarioPokemon
 
             string email = txtEmailLogin.Text;
             string senha = txtSenhaLogin.Text;
-
+            FormTelaUsuario fTelaUsuario = new();
+            
             try
             {
-                
-                AutenticacaoService aut = new();
-                int usuarioID = aut.AutenticarUsuario(email, senha, this);
-                if (usuarioID > 0)
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
                 {
-                    FormTelaUsuario telaUsuario = new();
-                    telaUsuario.UsuarioID = usuarioID;
+                    lblLogar.Text = "Preencha antes de tentar o login";
+                }
+                AutenticacaoService aut = new();
+                int id = aut.AutenticarUsuario(email, senha);
+                
+                if(id > 0)
+                {
                     this.Hide();
-                    telaUsuario.Show();
+                    fTelaUsuario.Email = email;
+                    fTelaUsuario.Senha = senha;
+                    fTelaUsuario.Show();
                 }
             }
             catch (Exception ex)
@@ -41,7 +42,7 @@ namespace InventarioPokemon
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            FormMenuRegistrar menuRegistrar = new FormMenuRegistrar();
+            FormMenuRegistrar menuRegistrar = new();
             this.Hide();
             menuRegistrar.Show();
         }
