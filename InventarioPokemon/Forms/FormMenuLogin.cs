@@ -1,5 +1,5 @@
 using InventarioPokemon.Forms;
-using InventarioPokemon.Services.ServicoDeAutenticacao;
+using InventarioPokemon.Models.UsuarioModels;
 
 namespace InventarioPokemon
 {
@@ -16,22 +16,25 @@ namespace InventarioPokemon
             string email = txtEmailLogin.Text;
             string senha = txtSenhaLogin.Text;
             FormTelaUsuario fTelaUsuario = new();
-            
+            LogarConta lgConta = new();
             try
             {
                 if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
                 {
                     lblLogar.Text = "Preencha antes de tentar o login";
                 }
-                AutenticacaoService aut = new();
-                int id = aut.AutenticarUsuario(email, senha);
+                
+                int id = lgConta.LogarUsuario(email, senha);
                 
                 if(id > 0)
                 {
                     this.Hide();
-                    fTelaUsuario.Email = email;
-                    fTelaUsuario.Senha = senha;
                     fTelaUsuario.Show();
+                }
+                else
+                {
+                    lblLogar.Text = "Email ou Senha Errados";
+                    lblLogar.ForeColor = Color.Red;
                 }
             }
             catch (Exception ex)
