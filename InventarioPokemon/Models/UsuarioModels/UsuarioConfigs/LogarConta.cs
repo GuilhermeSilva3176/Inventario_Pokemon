@@ -1,6 +1,6 @@
 ﻿using Npgsql;
 
-namespace InventarioPokemon.Models.UsuarioModels;
+namespace InventarioPokemon.Models.UsuarioModels.UsuarioConfigs;
 
 public class LogarConta
 {
@@ -23,7 +23,7 @@ public class LogarConta
             NpgsqlDataReader reader = cmdNpg.ExecuteReader();
 
             if (reader.Read())
-            {            
+            {
                 id = reader.GetInt32(0);
             }
 

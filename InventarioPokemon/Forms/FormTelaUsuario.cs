@@ -1,19 +1,21 @@
-﻿using InventarioPokemon.Forms;
-using InventarioPokemon.Models.UsuarioModels;
+﻿
+using InventarioPokemon.Forms;
 using InventarioPokemon.Models.UsuarioModels.UsuarioConfigs;
-using InventarioPokemon.Services.BdConexao;
+
 
 namespace InventarioPokemon
 {
     public partial class FormTelaUsuario : Form
     {
         public int UsuarioID { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
 
-        public FormTelaUsuario()
+        public FormTelaUsuario(string email, string senha)
         {
             InitializeComponent();
+
+            NomeConta nomeARetornar = new(email, senha);
+            string mostrarNome = nomeARetornar.RetornaNome();
+            lblUsuario.Text = mostrarNome;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -40,6 +42,12 @@ namespace InventarioPokemon
             {
                 MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}");
             }
+        }
+
+        private void btnFormAtualizar_Click(object sender, EventArgs e)
+        {
+            FormAtualizarConta fAtualizarConta = new();
+            fAtualizarConta.Show();
         }
     }
 }
