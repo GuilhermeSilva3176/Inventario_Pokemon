@@ -4,9 +4,11 @@ namespace InventarioPokemon.Forms;
 
 public partial class FormAtualizarConta : Form
 {
-    public FormAtualizarConta()
+    public int UsuarioID { get; set; }
+    public FormAtualizarConta(int usuarioID)
     {
         InitializeComponent();
+        UsuarioID = usuarioID;
     }
 
     private void btnAtualizar_Click(object sender, EventArgs e)
@@ -14,6 +16,28 @@ public partial class FormAtualizarConta : Form
         string nome = txtNomeAtualizar.Text;
         string email = txtEmailAtualizar.Text;
         string senha = txtSenhaAtualizar.Text;
+
+        int id = UsuarioID;
+
+        try
+        {
+            AtualizarConta atualizarConta = new();
+            int resultadoAtualizacao = atualizarConta.AttConta(id, nome, email, senha);
+
+            if (resultadoAtualizacao > 0)
+            {
+                this.Close();
+            }
+            else if (resultadoAtualizacao < 0)
+            {
+                lblResultado.Text = "Conta não encontrada ou algo aconteceu";
+            }
+        }
+        catch (Exception ex)
+        {
+            lblResultado.Text = $"Erro: {ex.Message}";
+        }
+
     }
 
     private void btnCancelar_Click(object sender, EventArgs e)

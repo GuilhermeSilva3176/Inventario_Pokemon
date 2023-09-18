@@ -22,6 +22,7 @@ namespace InventarioPokemon
             Senha = senha;
             FormTelaUsuario fTelaUsuario = new(email, senha);
             LogarConta lgConta = new();
+            AtualizarConta atConta = new();
             try
             {
                 if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
@@ -30,7 +31,8 @@ namespace InventarioPokemon
                 }
 
                 int id = lgConta.LogarUsuario(email, senha);
-
+                fTelaUsuario.UsuarioID = id;
+                atConta.Id = id;
                 if (id > 0)
                 {
                     this.Hide();

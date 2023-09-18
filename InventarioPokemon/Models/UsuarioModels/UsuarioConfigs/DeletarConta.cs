@@ -8,9 +8,10 @@ public class DeletarConta
     {
         try
         {
-            UserModel usrModel = UserModel.Instance;
+            UserModel usrModel = new();
+            string connectionString = usrModel.GetConnectionString();
 
-            using NpgsqlConnection connection = new(usrModel.GetConnectionString());
+            using NpgsqlConnection connection = new(connectionString);
             connection.Open();
 
             string sqlCommand = $"DELETE FROM users WHERE Id= {id}";
@@ -19,7 +20,6 @@ public class DeletarConta
             cmd.Parameters.AddWithValue("Id", id);
 
             cmd.ExecuteNonQuery();
-            connection.Close();
         }
         catch (Exception ex)
         {

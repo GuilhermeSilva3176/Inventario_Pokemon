@@ -1,51 +1,40 @@
-﻿using InventarioPokemon.Forms;
-using Npgsql;
-using System.ComponentModel.DataAnnotations;
+﻿using Npgsql;
 
 namespace InventarioPokemon.Models.UsuarioModels.UsuarioConfigs;
 
-internal class AtualizarConta
+public class AtualizarConta
 {
-    private string Email { get; }
-    private string Senha { get; }
-
-    public AtualizarConta(string email, string senha)
-    {
-        Email = email;
-        Senha = senha;
-    }
-    public string AttConta(string nome, string email, string senha)
+    public int Id { get; set; }
+    public int AttConta(int id, string nome, string email, string senha)
     {
         try
-        {          
-            FormMenuLogin fMenuLogin = new();
-            LogarConta lgConta = new();
+        {
+            UserModel usrModel = new();
+            string connectionString = usrModel.GetConnectionString();
 
-            UserModel usrModel = UserModel.Instance;
-            using NpgsqlConnection connection = new(usrModel.GetConnectionString());
+            using NpgsqlConnection connection = new(connectionString);
             connection.Open();
 
-            int id = lgConta.LogarUsuario(Email, Senha);
             string attQuery = "UPDATE users SET nome=@Nome,email=@Email,senha=@Senha WHERE id=@Id";
-
 
             NpgsqlCommand cmd = new NpgsqlCommand(attQuery, connection);
             cmd.Parameters.AddWithValue("Id", id);
             cmd.Parameters.AddWithValue("Nome", nome);
             cmd.Parameters.AddWithValue("email", email);
             cmd.Parameters.AddWithValue("Senha", senha);
-
-            NpgsqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            
+            int rowsaffected = cmd.ExecuteNonQuery();
+            if(rowsaffected > 0) 
             {
-               return "Nome Atualizado com sucesso!!";
+                MessageBox.Show("Conta atualizada com sucesso!!");
+                return rowsaffected;
             }
             connection.Close();
         }
-        catch (Exception ex)
+        catch
         {
-            return $"Erro: {ex.Message}";
+            return -1;
         }
-        return "Não foi possivel atualizar o nome.";
+        return -1;
     }
 }

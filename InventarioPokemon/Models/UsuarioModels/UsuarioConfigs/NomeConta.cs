@@ -16,8 +16,10 @@ public class NomeConta
         LogarConta lgConta = new();
         try
         {
-            UserModel usrModel = UserModel.Instance;
-            using NpgsqlConnection connection = new(usrModel.GetConnectionString());
+            UserModel usrModel = new();
+            string connectionString = usrModel.GetConnectionString();
+
+            using NpgsqlConnection connection = new(connectionString);
             connection.Open();
 
             int id = lgConta.LogarUsuario(Email, Senha);

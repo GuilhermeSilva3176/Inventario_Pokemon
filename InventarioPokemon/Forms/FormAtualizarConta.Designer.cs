@@ -36,11 +36,12 @@
             label2 = new Label();
             label3 = new Label();
             button2 = new Button();
+            lblResultado = new Label();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(158, 207);
+            button1.Location = new Point(157, 192);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
@@ -98,7 +99,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(12, 207);
+            button2.Location = new Point(11, 192);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 7;
@@ -106,11 +107,20 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += btnCancelar_Click;
             // 
+            // lblResultado
+            // 
+            lblResultado.AutoSize = true;
+            lblResultado.Location = new Point(18, 220);
+            lblResultado.Name = "lblResultado";
+            lblResultado.Size = new Size(0, 15);
+            lblResultado.TabIndex = 8;
+            // 
             // FormAtualizarConta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(244, 242);
+            ClientSize = new Size(266, 242);
+            Controls.Add(lblResultado);
             Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -135,5 +145,6 @@
         private Label label2;
         private Label label3;
         private Button button2;
+        private Label lblResultado;
     }
 }

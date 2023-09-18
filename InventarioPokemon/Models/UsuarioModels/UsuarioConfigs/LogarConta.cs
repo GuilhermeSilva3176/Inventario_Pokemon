@@ -8,9 +8,10 @@ public class LogarConta
     {
         try
         {
-            UserModel usrModel = UserModel.Instance;
+            UserModel usrModel = new();
+            string connectionString = usrModel.GetConnectionString();
 
-            using NpgsqlConnection connection = new(usrModel.GetConnectionString());
+            using NpgsqlConnection connection = new(connectionString);
             connection.Open();
             int id = -1;
             string userQuery = "SELECT id FROM Users WHERE email = @Email AND senha = @Senha";
@@ -26,7 +27,6 @@ public class LogarConta
             {
                 id = reader.GetInt32(0);
             }
-
             return id;
         }
         catch

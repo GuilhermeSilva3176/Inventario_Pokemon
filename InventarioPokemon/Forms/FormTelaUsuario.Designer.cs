@@ -58,7 +58,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDelete.Location = new Point(378, 178);
+            btnDelete.Location = new Point(225, 178);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(61, 22);
             btnDelete.TabIndex = 2;
@@ -69,7 +69,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(182, 182);
+            label2.Location = new Point(29, 182);
             label2.Name = "label2";
             label2.Size = new Size(189, 15);
             label2.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // btnFormAtualizar
             // 
-            btnFormAtualizar.Location = new Point(378, 135);
+            btnFormAtualizar.Location = new Point(225, 135);
             btnFormAtualizar.Name = "btnFormAtualizar";
             btnFormAtualizar.Size = new Size(61, 23);
             btnFormAtualizar.TabIndex = 4;
@@ -88,7 +88,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(174, 139);
+            label3.Location = new Point(21, 139);
             label3.Name = "label3";
             label3.Size = new Size(197, 15);
             label3.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(451, 206);
+            ClientSize = new Size(292, 206);
             Controls.Add(label3);
             Controls.Add(btnFormAtualizar);
             Controls.Add(label2);
