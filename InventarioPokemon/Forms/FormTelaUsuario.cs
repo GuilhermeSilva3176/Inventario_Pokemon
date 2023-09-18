@@ -8,13 +8,7 @@ namespace InventarioPokemon
     public partial class FormTelaUsuario : Form
     {
         public int UsuarioID { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
-
-        public void SetUsuarioID(int usuarioID)
-        {
-            UsuarioID = usuarioID;
-        }
+        
         public FormTelaUsuario(string email, string senha)
         {
             InitializeComponent();
@@ -23,7 +17,14 @@ namespace InventarioPokemon
             string mostrarNome = nomeARetornar.RetornaNome();
             lblUsuario.Text = mostrarNome;
         }
-
+        public void AtualizarNomeUsuario(string novoNome)
+        {
+            lblUsuario.Text = novoNome;
+        }
+        public void SetUsuarioID(int usuarioID)
+        {
+            UsuarioID = usuarioID;
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int idUsuario = UsuarioID;

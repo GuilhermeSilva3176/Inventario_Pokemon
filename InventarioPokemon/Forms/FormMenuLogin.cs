@@ -32,7 +32,6 @@ namespace InventarioPokemon
 
                 int id = lgConta.LogarUsuario(email, senha);
                 fTelaUsuario.UsuarioID = id;
-                atConta.Id = id;
                 if (id > 0)
                 {
                     this.Hide();

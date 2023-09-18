@@ -26,6 +26,11 @@ public partial class FormAtualizarConta : Form
 
             if (resultadoAtualizacao > 0)
             {
+                var formTelaUsuario = Application.OpenForms.OfType<FormTelaUsuario>().FirstOrDefault();
+                if (formTelaUsuario != null)
+                {
+                    formTelaUsuario.AtualizarNomeUsuario(nome);
+                }
                 this.Close();
             }
             else if (resultadoAtualizacao < 0)

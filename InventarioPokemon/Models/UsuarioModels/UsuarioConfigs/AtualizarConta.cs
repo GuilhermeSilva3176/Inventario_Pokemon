@@ -4,7 +4,6 @@ namespace InventarioPokemon.Models.UsuarioModels.UsuarioConfigs;
 
 public class AtualizarConta
 {
-    public int Id { get; set; }
     public int AttConta(int id, string nome, string email, string senha)
     {
         try
