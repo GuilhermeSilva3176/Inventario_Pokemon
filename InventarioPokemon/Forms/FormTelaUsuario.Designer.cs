@@ -34,22 +34,22 @@
             label2 = new Label();
             btnFormAtualizar = new Button();
             label3 = new Label();
+            lblUsuarioEmail = new Label();
+            label5 = new Label();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(94, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Usuário:";
+            label1.Size = new Size(100, 23);
+            label1.TabIndex = 7;
             // 
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(115, 19);
+            lblUsuario.Location = new Point(71, 9);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(29, 15);
             lblUsuario.TabIndex = 1;
@@ -94,11 +94,41 @@
             label3.TabIndex = 5;
             label3.Text = "Clique aqui para atualizar sua conta:";
             // 
+            // lblUsuarioEmail
+            // 
+            lblUsuarioEmail.AutoSize = true;
+            lblUsuarioEmail.Location = new Point(71, 38);
+            lblUsuarioEmail.Name = "lblUsuarioEmail";
+            lblUsuarioEmail.Size = new Size(29, 15);
+            lblUsuarioEmail.TabIndex = 6;
+            lblUsuarioEmail.Text = "N/A";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(50, 15);
+            label5.TabIndex = 8;
+            label5.Text = "Usuario:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(12, 38);
+            label6.Name = "label6";
+            label6.Size = new Size(39, 15);
+            label6.TabIndex = 9;
+            label6.Text = "Email:";
+            // 
             // FormTelaUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(292, 206);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(lblUsuarioEmail);
             Controls.Add(label3);
             Controls.Add(btnFormAtualizar);
             Controls.Add(label2);
@@ -119,5 +149,8 @@
         private Label label2;
         private Button btnFormAtualizar;
         private Label label3;
+        private Label lblUsuarioEmail;
+        private Label label5;
+        private Label label6;
     }
 }

@@ -1,17 +1,17 @@
 ﻿using Npgsql;
 namespace InventarioPokemon.Models.UsuarioModels.UsuarioConfigs;
 
-public class NomeConta
+public class DadosConta
 {
     private string Email { get; }
     private string Senha { get; }
 
-    public NomeConta(string email, string senha)
+    public DadosConta(string email, string senha)
     {
         Email = email;
         Senha = senha;
     }
-    public string RetornaNome()
+    public (string Nome, string Email) RetornaInformacoes()
     {
         LogarConta lgConta = new();
         try
@@ -23,7 +23,7 @@ public class NomeConta
             connection.Open();
 
             int id = lgConta.LogarUsuario(Email, Senha);
-            string nameUserQuery = "SELECT nome FROM users WHERE id=@id";
+            string nameUserQuery = "SELECT nome, email, senha FROM users WHERE id=@id";
 
             NpgsqlCommand cmd = new NpgsqlCommand(nameUserQuery, connection);
             cmd.Parameters.AddWithValue("id", id);
@@ -31,13 +31,15 @@ public class NomeConta
             NpgsqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                return reader.GetString(0);
+                string nome = reader.GetString(0);
+                string email = reader.GetString(1);
+                return (nome, email);
             }
         }
         catch (Exception ex)
         {
-            return $"Algum erro inesperado aconteceu {ex.Message}";
+           throw ex;
         }
-        return "Erro ao Mostrar Nome D:";
+        return ("Erro ao ","Mostrar Nome.");
     }
 }

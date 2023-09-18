@@ -8,14 +8,15 @@ namespace InventarioPokemon
     public partial class FormTelaUsuario : Form
     {
         public int UsuarioID { get; set; }
-        
+
         public FormTelaUsuario(string email, string senha)
         {
             InitializeComponent();
 
-            NomeConta nomeARetornar = new(email, senha);
-            string mostrarNome = nomeARetornar.RetornaNome();
-            lblUsuario.Text = mostrarNome;
+            DadosConta nomeARetornar = new(email, senha);
+            var informacoes = nomeARetornar.RetornaInformacoes();
+            lblUsuario.Text = informacoes.Nome;
+            lblUsuarioEmail.Text = informacoes.Email;
         }
         public void AtualizarNomeUsuario(string novoNome)
         {

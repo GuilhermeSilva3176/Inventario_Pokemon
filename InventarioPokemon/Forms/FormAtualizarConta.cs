@@ -35,7 +35,7 @@ public partial class FormAtualizarConta : Form
             }
             else if (resultadoAtualizacao < 0)
             {
-                lblResultado.Text = "Conta não encontrada ou algo aconteceu";
+                lblResultado.Text = "Conta não atualizada ou algo aconteceu";
             }
         }
         catch (Exception ex)
