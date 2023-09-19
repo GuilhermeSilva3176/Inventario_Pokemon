@@ -28,7 +28,6 @@ public class AtualizarConta
                 MessageBox.Show("Conta atualizada com sucesso!!");
                 return rowsaffected;
             }
-            connection.Close();
         }
         catch
         {

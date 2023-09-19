@@ -58,7 +58,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDelete.Location = new Point(225, 178);
+            btnDelete.Location = new Point(12, 176);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(61, 22);
             btnDelete.TabIndex = 2;
@@ -69,15 +69,15 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(29, 182);
+            label2.Location = new Point(79, 180);
             label2.Name = "label2";
-            label2.Size = new Size(189, 15);
+            label2.Size = new Size(77, 15);
             label2.TabIndex = 3;
-            label2.Text = "Clique aqui para deletar sua conta:";
+            label2.Text = "Deletar conta";
             // 
             // btnFormAtualizar
             // 
-            btnFormAtualizar.Location = new Point(225, 135);
+            btnFormAtualizar.Location = new Point(12, 133);
             btnFormAtualizar.Name = "btnFormAtualizar";
             btnFormAtualizar.Size = new Size(61, 23);
             btnFormAtualizar.TabIndex = 4;
@@ -88,11 +88,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(21, 139);
+            label3.Location = new Point(79, 137);
             label3.Name = "label3";
-            label3.Size = new Size(197, 15);
+            label3.Size = new Size(86, 15);
             label3.TabIndex = 5;
-            label3.Text = "Clique aqui para atualizar sua conta:";
+            label3.Text = "Atualizar conta";
             // 
             // lblUsuarioEmail
             // 
@@ -125,7 +125,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(292, 206);
+            ClientSize = new Size(354, 206);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(lblUsuarioEmail);

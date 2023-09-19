@@ -18,9 +18,10 @@ namespace InventarioPokemon
             lblUsuario.Text = informacoes.Nome;
             lblUsuarioEmail.Text = informacoes.Email;
         }
-        public void AtualizarNomeUsuario(string novoNome)
+        public void AtualizarNomeUsuario(string novoNome,string novoEmail)
         {
             lblUsuario.Text = novoNome;
+            lblUsuarioEmail.Text = novoEmail;
         }
         public void SetUsuarioID(int usuarioID)
         {

@@ -20,9 +20,9 @@ namespace InventarioPokemon
             string senha = txtSenhaLogin.Text;
             Email = email;
             Senha = senha;
-            FormTelaUsuario fTelaUsuario = new(email, senha);
+            int id;
+               
             LogarConta lgConta = new();
-            AtualizarConta atConta = new();
             try
             {
                 if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
@@ -30,12 +30,12 @@ namespace InventarioPokemon
                     lblLogar.Text = "Preencha antes de tentar o login";
                 }
 
-                int id = lgConta.LogarUsuario(email, senha);
-                fTelaUsuario.UsuarioID = id;
+                id = lgConta.LogarUsuario(email, senha);
+                FormTelaUsuarioPokemon fTelaUsuarioPokemon = new(id,email, senha);
                 if (id > 0)
                 {
                     this.Hide();
-                    fTelaUsuario.Show();
+                    fTelaUsuarioPokemon.Show();
                 }
                 else
                 {

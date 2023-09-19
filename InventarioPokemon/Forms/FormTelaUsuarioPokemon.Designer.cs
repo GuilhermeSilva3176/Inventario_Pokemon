@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormTelaUsuarioPokemon";
+            btnFormTelaUsuario = new Button();
+            SuspendLayout();
+            // 
+            // btnFormTelaUsuario
+            // 
+            btnFormTelaUsuario.Location = new Point(696, 12);
+            btnFormTelaUsuario.Name = "btnFormTelaUsuario";
+            btnFormTelaUsuario.Size = new Size(92, 27);
+            btnFormTelaUsuario.TabIndex = 0;
+            btnFormTelaUsuario.Text = "Configurações";
+            btnFormTelaUsuario.UseVisualStyleBackColor = true;
+            btnFormTelaUsuario.Click += btnFormTelaUsuario_Click;
+            // 
+            // FormTelaUsuarioPokemon
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnFormTelaUsuario);
+            Name = "FormTelaUsuarioPokemon";
+            Text = "FormTelaUsuarioPokemon";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnFormTelaUsuario;
     }
 }

@@ -1,20 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace InventarioPokemon.Forms
+namespace InventarioPokemon.Forms;
+
+public partial class FormTelaUsuarioPokemon : Form
 {
-    public partial class FormTelaUsuarioPokemon : Form
+    public int Id {  get; set; }
+    public string Senha {  get; set; }
+    public string Email { get; set; }
+    public FormTelaUsuarioPokemon(int id,string email,string senha)
     {
-        public FormTelaUsuarioPokemon()
+        InitializeComponent();
+        Id = id;
+        Senha = senha;
+        Email = email;
+    }
+
+    private void btnFormTelaUsuario_Click(object sender, EventArgs e)
+    {
+        FormTelaUsuario fTelaUsuario = new(Email, Senha)
         {
-            InitializeComponent();
-        }
+            UsuarioID = Id
+        };
+        fTelaUsuario.Show();
     }
 }

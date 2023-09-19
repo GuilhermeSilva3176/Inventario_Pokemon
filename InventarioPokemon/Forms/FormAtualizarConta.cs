@@ -29,7 +29,7 @@ public partial class FormAtualizarConta : Form
                 var formTelaUsuario = Application.OpenForms.OfType<FormTelaUsuario>().FirstOrDefault();
                 if (formTelaUsuario != null)
                 {
-                    formTelaUsuario.AtualizarNomeUsuario(nome);
+                    formTelaUsuario.AtualizarNomeUsuario(nome,email);
                 }
                 this.Close();
             }
